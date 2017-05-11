@@ -1,0 +1,26 @@
+#sudocu > input{
+  width:20px;
+  height:20px;
+  text-align:center;
+  margin:1px;
+  background-color:white;
+  font-weight:600;
+  font-size:12pt;
+}
+#sudocu > input:nth-child(10n+4),
+#sudocu > input:nth-child(10n+7){
+    margin-right:5px;
+}
+#sudocu > input:nth-child(27n){
+    margin-bottom:5px;
+}
+#sudocu > input.active{
+    background-color:rgb(200,200,230);
+}
+#sudocu > input[disabled]{
+    background-color:gray;
+    color:black;
+}
+#sudocu > input.error{
+    color:red;
+}
