@@ -1,11 +1,14 @@
 #sudocu > input{
-  width:20px;
-  height:20px;
+  width:35px;
+  height:35px;
   text-align:center;
   margin:1px;
   background-color:white;
   font-weight:600;
-  font-size:12pt;
+  font-size:14pt;
+  border-style:solid;
+  color:black;
+  background-color:rgba(255,255,255,1);
 }
 #sudocu > input:nth-child(10n+4),
 #sudocu > input:nth-child(10n+7){
@@ -17,10 +20,10 @@
 #sudocu > input.active{
     background-color:rgb(200,200,230);
 }
-#sudocu > input[disabled]{
-    background-color:gray;
-    color:black;
+#sudocu > input:disabled{
+    background-color:rgba(255,255,255,0.7);
 }
 #sudocu > input.error{
     color:red;
+    background-color:rgba(255,0,0,0.5);
 }
