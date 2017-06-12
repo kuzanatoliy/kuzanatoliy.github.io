@@ -1,5 +1,5 @@
-function Sudocu(data){
-    var id = data.id || "sudocu";
+function Sudoku(data){
+    var id = data.id || "sudoku";
     var baseMatrix = data.matrix || 
         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
         
