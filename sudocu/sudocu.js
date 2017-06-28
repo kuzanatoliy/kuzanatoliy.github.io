@@ -1,11 +1,11 @@
-function Sudoku(data){
-    var id = data.id || "sudoku";
+function Sudocu(data){
+    var id = data.id || "sudocu";
     var baseMatrix = data.matrix || 
         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
         
     var model = {
         createMatrix: function(matrix){
-            return matrix.map((item) => {
+            return matrix.map(function(item){
                 if(item == 0){
                     return "";
                 }
@@ -16,7 +16,7 @@ function Sudoku(data){
         },
         
         createErrors: function(matrix){
-            return matrix.map((item) => {
+            return matrix.map(function(item){
                 return 0;
             });
         },
