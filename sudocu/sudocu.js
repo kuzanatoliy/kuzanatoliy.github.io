@@ -5,7 +5,7 @@ function Sudocu(data){
         
     var model = {
         createMatrix: function(matrix){
-            return matrix.map(function(item){
+            return matrix.map((item) => {
                 if(item == 0){
                     return "";
                 }
@@ -16,7 +16,7 @@ function Sudocu(data){
         },
         
         createErrors: function(matrix){
-            return matrix.map(function(item){
+            return matrix.map((item) => {
                 return 0;
             });
         },
@@ -129,9 +129,9 @@ function Sudocu(data){
         },
         
         settingInputs: function(row, column, region){
-            view.forEach(document.querySelectorAll('#' + id + 'input[data-row-number="' + this.dataset.rowNumber + '"]'),view.settingInput);
-            view.forEach(document.querySelectorAll('#' + id + 'input[data-column-number="' + this.dataset.columnNumber + '"]'),view.settingInput);
-            view.forEach(document.querySelectorAll('#' + id + 'input[data-region-number="' + this.dataset.regionNumber + '"]'),view.settingInput);
+            view.forEach(document.querySelectorAll(`#${id} input[data-row-number="${this.dataset.rowNumber}"]`),view.settingInput);
+            view.forEach(document.querySelectorAll(`#${id} input[data-column-number="${this.dataset.columnNumber}"]`),view.settingInput);
+            view.forEach(document.querySelectorAll(`#${id} input[data-region-number="${this.dataset.regionNumber}"]`),view.settingInput);
         },
         
         input: function (event){
@@ -155,9 +155,9 @@ function Sudocu(data){
         },
 
         focus: function(event){
-            view.forEach(document.querySelectorAll('#' + id + 'input[data-row-number="' + this.dataset.rowNumber + '"]'),view.active);
-            view.forEach(document.querySelectorAll('#' + id + 'input[data-column-number="' + this.dataset.columnNumber + '"]'),view.active);
-            view.forEach(document.querySelectorAll('#' + id + 'input[data-region-number="' + this.dataset.regionNumber + '"]'),view.active);
+            view.forEach(document.querySelectorAll(`#${id} input[data-row-number="${this.dataset.rowNumber}"]`),view.active);
+            view.forEach(document.querySelectorAll(`#${id} input[data-column-number="${this.dataset.columnNumber}"]`),view.active);
+            view.forEach(document.querySelectorAll(`#${id} input[data-region-number="${this.dataset.regionNumber}"]`),view.active);
         },
         
         move: function(event){
@@ -167,7 +167,7 @@ function Sudocu(data){
                     while(true){
                         elem = elem.nextElementSibling;
                         if(elem.tagName == "BR"){
-                            document.querySelector('#' + id + 'input[data-row-number="' + this.dataset.rowNumber + '"]:not([disabled])').focus();
+                            document.querySelector(`#${id} input[data-row-number="${this.dataset.rowNumber}"]:not([disabled])`).focus();
                             break;
                         }
                         if(!elem.disabled){
@@ -181,7 +181,7 @@ function Sudocu(data){
                     while(true){
                         elem = elem.previousElementSibling;
                         if(elem.tagName == "BR"){
-                            var elems = document.querySelectorAll('#' + id + 'input[data-row-number="' + this.dataset.rowNumber + '"]:not([disabled])');
+                            var elems = document.querySelectorAll(`#${id} input[data-row-number="${this.dataset.rowNumber}"]:not([disabled])`);
                             elems[elems.length - 1].focus();
                             break;
                         }
@@ -197,7 +197,7 @@ function Sudocu(data){
                         for(var i = 0; i < 10; i++){
                             elem = elem.previousElementSibling;
                             if(elem == null){
-                                var elems = document.querySelectorAll('#' + id + 'input[data-column-number="' + this.dataset.columnNumber + '"]:not([disabled])');
+                                var elems = document.querySelectorAll(`#${id} input[data-column-number="${this.dataset.columnNumber}"]:not([disabled])`);
                                 elems[elems.length - 1].focus();
                                 break;
                             }
@@ -217,7 +217,7 @@ function Sudocu(data){
                         for(var i = 0; i < 10; i++){
                             elem = elem.nextElementSibling;
                             if(elem == null){
-                                document.querySelector('#' + id + 'input[data-column-number="' + this.dataset.columnNumber + '"]:not([disabled])').focus();
+                                document.querySelector(`#${id} input[data-column-number="${this.dataset.columnNumber}"]:not([disabled])`).focus();
                                 break;
                             }
                         }
@@ -256,8 +256,8 @@ function Sudocu(data){
         },
         
         setting: function(){
-            var elems = document.querySelectorAll('#' + id + ' input');
-            baseMatrix.forEach(function(item, i, arr){
+            var elems = document.querySelectorAll(`#${id} input`);
+            baseMatrix.forEach((item, i, arr) => {
                 if(item > 0){
                     elems[i].disabled = true;
                     elems[i].value = item;
